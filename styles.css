@@ -1,0 +1,274 @@
+/* ============================================================
+   CompressPDF Pro - styles.css
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f59e0b;
+  cursor: pointer;
+  border: 3px solid #0f172a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #f59e0b;
+  cursor: pointer;
+  border: 3px solid #0f172a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-item {
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.sidebar-item:hover,
+.sidebar-item.active {
+  background: #1e293b;
+}
+
+.sidebar-item.active {
+  border-left: 3px solid #f59e0b;
+  color: #f8fafc;
+}
+
+.upload-zone {
+  transition: all 0.3s;
+}
+ 
+.upload-zone:hover,
+.upload-zone.drag-over {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.tool-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.label {
+  display: block;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field,
+.file-field {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.field:focus,
+.file-field:focus {
+  border-color: #f59e0b;
+}
+
+.file-field::file-selector-button {
+  border: 0;
+  border-radius: 8px;
+  background: #f59e0b;
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 12px;
+  padding: 8px 12px;
+}
+
+.primary-btn,
+.success-btn {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  font-weight: 700;
+  gap: 8px;
+  justify-content: center;
+  padding: 12px;
+  transition: background 0.2s, opacity 0.2s;
+  width: 100%;
+}
+
+.primary-btn {
+  background: #f59e0b;
+  color: #0f172a;
+}
+
+.primary-btn:hover {
+  background: #d97706;
+}
+
+.success-btn {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.success-btn:hover {
+  background: #22c55e;
+}
+
+.primary-btn:disabled,
+.success-btn:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.status-text {
+  color: #cbd5e1;
+  font-size: 14px;
+  min-height: 22px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.mobile-tool-nav {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 20px;
+}
+
+.mobile-tool-btn {
+  align-items: center;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 6px;
+  justify-content: center;
+  min-height: 68px;
+  padding: 10px 6px;
+  text-align: center;
+}
+
+.mobile-tool-btn i {
+  color: #f59e0b;
+  font-size: 18px;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    padding: 16px !important;
+  }
+
+  #tool-title {
+    font-size: 22px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .upload-zone {
+    border-radius: 14px;
+    padding: 28px 18px;
+  }
+
+  .mobile-tool-btn.active {
+    border-left: 1px solid #f59e0b;
+    border-color: #f59e0b;
+  }
+
+  #controls,
+  .tool-card {
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .field,
+  .file-field {
+    font-size: 16px;
+    min-height: 46px;
+  }
+
+  .primary-btn,
+  .success-btn {
+    min-height: 48px;
+    padding: 12px 10px;
+  }
+
+  #controls .bg-slate-800.flex {
+    align-items: stretch;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  #controls .bg-slate-800.flex > div {
+    width: 100%;
+  }
+
+  #controls .bg-slate-800.flex > .text-right {
+    text-align: left;
+  }
+
+  #controls .bg-slate-800.flex > .flex-1 {
+    order: 2;
+  }
+
+  #file-name {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 420px) {
+  .mobile-tool-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mobile-tool-btn {
+    min-height: 54px;
+    flex-direction: row;
+  }
+
+  .upload-zone {
+    padding: 24px 14px;
+  }
+
+  #controls,
+  .tool-card {
+    padding: 16px;
+  }
+}
